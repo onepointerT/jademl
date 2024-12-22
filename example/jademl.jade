@@ -1,0 +1,19 @@
+h1 {{ project_title }}
+h3 {{ project_version }}
+h4 {{ project_desc }}
+
+{{ preamble }}
+
+h2 {{ db:first_section_title | FROM Projects WHERE title == {{ project_title }}  }}
+
+{{ db:first_section | FROM Projects WHERE title == {{ project_title }}  }}
+
+{% for elem in {{ db:: | FROM ProjectsInfo WHERE title == {{ project_title }} }} %}
+    div(align=center)
+        h2 {{ elem:title }}
+
+        {{ elem:text }}
+    
+        button(type="submit")a(href="{{ elem:button_more_info_link }}")
+        button(type="submit"){+ elem:button_show_gui_func | {{ elem:title }}, {{ elem }} +}
+{% endfor %}
