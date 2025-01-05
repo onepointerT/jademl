@@ -1,0 +1,11 @@
+h1 {{ project_title }}
+h3 {{ project_version }}
+h4 {{ project_desc }}
+
+{{ preamble }}
+
+{( add scr/site_util.js )}
+
+h2(script="{( run scr/heading.coffee )}") This is a clickable heading! 
+
+{{ h2_text1 }}

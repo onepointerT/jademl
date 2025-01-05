@@ -14,6 +14,23 @@ h2 {{ db:first_section_title | FROM Projects WHERE title == {{ project_title }} 
 
         {{ elem:text }}
     
-        button(type="submit")a(href="{{ elem:button_more_info_link }}")
+        button.btn1(type="submit")a(href="{{ elem:button_more_info_link }}")
         button(type="submit"){+ elem:button_show_gui_func | {{ elem:title }}, {{ elem }} +}
 {% endfor %}
+
+
+textarea#txtarea.txt-area.col1 This is a test lane for parsing text areal HTML markup and 
+    | a real multi-line text labeled with and HTML-like jade-id and two css classes.
+
+textarea#txtarea2.txt-area.col2 (name="myTxtarea") And here we test it with brackets
+    | and a more or less longer
+    | multi-lane text.
+
+#divarea.txt-area.col3 This is the third column of the three text area columns beginning with an 
+    | css tag and an id only.
+
+#divarea2
+    .cls1
+        .cl2 (name="myTxtarea2") Some short text
+    | with even multiline parsed.
+
